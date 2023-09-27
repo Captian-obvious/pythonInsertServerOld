@@ -44,6 +44,6 @@ class insertserver:
 
 myDomainSelf = os.environ.get('SERVER_NAME')
 myPathSelf = os.environ.get('PATH_INFO')
-myURLSelf = myDomainSelf + myPathSelf
+myURLSelf = myDomainSelf+myPathSelf
 myQuery = os.eviron.get('QUERY_STRING')
 print(str(myURLSelf)+str(myQuery))
