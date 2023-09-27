@@ -1,12 +1,12 @@
 import requests, sys, os, io
 
 class insertserver:
-    def downloadAsset(id):
-        url = 'https://assetdelivery.roblox.com/v1/asset/?id='+str(id)
+    def downloadAsset(assetid):
+        url = 'https://assetdelivery.roblox.com/v1/asset/?id='+str(assetid)
         REQUEST = requests.get(url)
         if (REQUEST.status_code<400):
             rawData = REQUEST.content
-            asset = open('assets/v1/rbxm/'+str(id)+".rbxm", "w")
+            asset = open('assets/v1/rbxm/'+str(assetid)+".rbxm", "w")
             asset.write(str(rawData))
             return asset
         else:
@@ -14,12 +14,12 @@ class insertserver:
             return {'STATUS_CODE':REQUEST.status_code,'ERROR_MESSAGE':'REQUEST_ERROR: '+str(REQUEST.status_code)}
         ##endif
     ##end
-    def downloadImage(id):
-        url = 'https://assetdelivery.roblox.com/v1/asset/?id='+str(id)
+    def downloadImage(assetid):
+        url = 'https://assetdelivery.roblox.com/v1/asset/?id='+str(assetid)
         REQUEST = requests.get(url)
         if (REQUEST.status_code<400):
             rawData = REQUEST.content
-            asset = open('assets/v1/png/'+str(id)+".png", "w")
+            asset = open('assets/v1/png/'+str(assetid)+".png", "w")
             asset.write(str(rawData))
             return asset
         else:
@@ -27,7 +27,7 @@ class insertserver:
             return {'STATUS_CODE':REQUEST.status_code,'ERROR_MESSAGE':'REQUEST_ERROR: '+str(REQUEST.status_code)}
         ##endif
     ##end
-    def downloadAudio(id):
+    def downloadAudio(assetid):
         url = 'https://api.hyra.io/audio/'+str(id)
         REQUEST = requests.get(url)
         if (REQUEST.status_code<400):
@@ -45,5 +45,5 @@ class insertserver:
 myDomainSelf = os.environ.get('SERVER_NAME')
 myPathSelf = os.environ.get('PATH_INFO')
 myURLSelf = myDomainSelf+myPathSelf
-myQuery = os.eviron.get('QUERY_STRING')
+myQuery = os.environ.get('QUERY_STRING')
 print(str(myURLSelf)+str(myQuery))
