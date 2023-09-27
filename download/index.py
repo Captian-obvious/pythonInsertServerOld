@@ -63,7 +63,7 @@ myDomainSelf = os.environ.get('SERVER_NAME')
 myPathSelf = os.environ.get('PATH_INFO')
 myURLSelf = myDomainSelf+myPathSelf
 myQuery = os.environ.get('QUERY_STRING')
-if (thetype.find('id')):
+if (myQuery.find('id')):
     theid = int(myQuery[myQuery.find('id'):])
     if (theid!=None):
         insertserver.downloadAsset(theid)
