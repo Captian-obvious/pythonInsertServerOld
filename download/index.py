@@ -3,6 +3,20 @@ import sys
 import io
 import os
 
+my_webpage = """
+Content Type: text/html\n\n
+
+<html>
+    <head>
+        <title>Asset Downloader</title>
+    </head>
+    <body>
+        <h1>Download Asset Request Recieved.</h1>
+    </body>
+</html>
+"""
+print(my_webpage)
+
 class insertserver:
     def downloadAsset(assetid):
         url = 'https://assetdelivery.roblox.com/v1/asset/?id='+str(assetid)
