@@ -23,7 +23,7 @@ class insertserver:
         REQUEST = requests.get(url)
         if (REQUEST.status_code<400):
             rawData = REQUEST.content
-            asset = open('assets/v1/rbxm/'+str(assetid)+".rbxm", "w")
+            asset = open('../assets/v1/rbxm/'+str(assetid)+".rbxm", "w")
             asset.write(str(rawData))
             return asset
         else:
@@ -36,7 +36,7 @@ class insertserver:
         REQUEST = requests.get(url)
         if (REQUEST.status_code<400):
             rawData = REQUEST.content
-            asset = open('assets/v1/png/'+str(assetid)+".png", "w")
+            asset = open('../assets/v1/png/'+str(assetid)+".png", "w")
             asset.write(str(rawData))
             return asset
         else:
@@ -49,7 +49,7 @@ class insertserver:
         REQUEST = requests.get(url)
         if (REQUEST.status_code<400):
             rawData = REQUEST.content
-            asset = open('assets/v1/mp3/'+str(id)+".mp3", "w")
+            asset = open('../assets/v1/mp3/'+str(id)+".mp3", "w")
             asset.write(str(rawData))
             return asset
         else:
