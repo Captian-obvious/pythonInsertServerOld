@@ -45,11 +45,11 @@ class insertserver:
         ##endif
     ##end
     def downloadAudio(assetid):
-        url = 'https://api.hyra.io/audio/'+str(id)
+        url = 'https://api.hyra.io/audio/'+str(assetid)
         REQUEST = requests.get(url)
         if (REQUEST.status_code<400):
             rawData = REQUEST.content
-            asset = open('../assets/v1/mp3/'+str(id)+".mp3", "w")
+            asset = open('../assets/v1/mp3/'+str(assetid)+".mp3", "w")
             asset.write(str(rawData))
             return asset
         else:
@@ -63,4 +63,9 @@ myDomainSelf = os.environ.get('SERVER_NAME')
 myPathSelf = os.environ.get('PATH_INFO')
 myURLSelf = myDomainSelf+myPathSelf
 myQuery = os.environ.get('QUERY_STRING')
-print(str(myURLSelf)+str(myQuery))
+if (thetype.find('id')):
+    theid = int(myQuery[myQuery.find('id'):])
+    if (theid!=None):
+        insertserver.downloadAsset(theid)
+    ##endif
+##endif
