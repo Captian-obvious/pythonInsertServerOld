@@ -4,8 +4,7 @@ import io
 import os
 
 my_webpage = """
-Content Type: text/html\n\n
-
+<!DOCTYPE html>
 <html>
     <head>
         <title>Asset Downloader</title>
@@ -15,7 +14,9 @@ Content Type: text/html\n\n
     </body>
 </html>
 """
-print(my_webpage)
+def hello_world():
+    return my_webpage
+##end
 
 def test_placeholder():
     pass
