@@ -17,6 +17,10 @@ Content Type: text/html\n\n
 """
 print(my_webpage)
 
+def test_placeholder():
+    pass
+##end
+
 class insertserver:
     def downloadAsset(assetid):
         url = 'https://assetdelivery.roblox.com/v1/asset/?id='+str(assetid)
@@ -63,9 +67,9 @@ myDomainSelf = os.environ.get('SERVER_NAME')
 myPathSelf = os.environ.get('PATH_INFO')
 myURLSelf = myDomainSelf+myPathSelf
 myQuery = os.environ.get('QUERY_STRING')
-if (myQuery.find('id')):
+if (myQuery is not None) and (myQuery.find('id')):
     theid = int(myQuery[myQuery.find('id'):])
-    if (theid!=None):
+    if (theid is not None):
         insertserver.downloadAsset(theid)
     ##endif
 ##endif
