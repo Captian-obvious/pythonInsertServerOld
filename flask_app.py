@@ -1,7 +1,6 @@
 #The Insert Server Download Asset System..
 import requests
 from flask import Flask,request
-#The Insert Server Download Asset System..
 
 app = Flask(__name__)
 @app.route('/')
@@ -33,6 +32,7 @@ def hello_world():
         <title>Insert Cloud API - Asset Downloader</title>
         <link rel='icon' href='/images/favicon.ico'/>
         <link rel='stylesheet' href='/css/styles-main.css'/>
+        <link rel='stylesheet' href='/css/themes.css'/>
     </head>
     <body>
         <h1 class='red2'>InsertAPI Server: </h1>
